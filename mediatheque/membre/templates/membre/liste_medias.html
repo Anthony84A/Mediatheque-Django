@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Médiathèque - {{ type_media|title }}</title>
+    <link rel="stylesheet" href="/static/membre/style.css">
+</head>
+<body>
+    <header>
+        <h1>{{ type_media|title }} - Médiathèque</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li><a href="{% url 'liste_medias' 'livre' %}">Livres</a></li>
+                <li><a href="{% url 'liste_medias' 'cd' %}">CDs</a></li>
+                <li><a href="{% url 'liste_medias' 'dvd' %}">DVDs</a></li>
+                <li><a href="{% url 'liste_medias' 'jeu_de_plateau' %}">Jeux de Plateaux</a></li>
+                <li><a href="/admin/">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Liste des {{ type_media|title }}</h2>
+        <ul>
+            {% for media in medias %}
+            <li>
+                <strong>{{ media.titre }}</strong><br>
+                <em>Disponible : {{ media.disponible|yesno:"Oui,Non" }}</em>
+            </li>
+            {% empty %}
+            <li>Aucun {{ type_media }} disponible pour le moment.</li>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2025 Médiathèque - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

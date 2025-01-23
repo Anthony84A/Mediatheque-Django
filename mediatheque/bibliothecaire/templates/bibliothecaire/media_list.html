@@ -1,0 +1,10 @@
+{% extends "bibliothecaire/base.html" %}
+{% block content %}
+<h1>Liste des Médias</h1>
+<ul>
+    {% for media in medias %}
+    <li>{{ media.title }} ({{ media.type }}) - {% if media.available %} Disponible {% else %} Emprunté {% endif %}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_media' %}">Ajouter un média</a>
+{% endblock %}

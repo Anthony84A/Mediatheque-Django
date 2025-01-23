@@ -1,0 +1,20 @@
+{% extends "bibliothecaire/base.html" %}
+{% block content %}
+<h1>Créer un Emprunt</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="media_id">Média :</label>
+    <select name="media_id">
+        {% for media in medias %}
+        <option value="{{ media.id }}">{{ media.title }}</option>
+        {% endfor %}
+    </select><br>
+    <label for="emprunteur_id">Emprunteur :</label>
+    <select name="emprunteur_id">
+        {% for emprunteur in emprunteurs %}
+        <option value="{{ emprunteur.id }}">{{ emprunteur.name }}</option>
+        {% endfor %}
+    </select><br>
+    <button type="submit">Créer</button>
+</form>
+{% endblock %}

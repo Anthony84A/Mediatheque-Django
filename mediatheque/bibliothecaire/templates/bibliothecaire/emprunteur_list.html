@@ -1,0 +1,10 @@
+{% extends "bibliothecaire/base.html" %}
+{% block content %}
+<h1>Liste des Emprunteurs</h1>
+<ul>
+    {% for emprunteur in emprunteurs %}
+    <li>{{ emprunteur.name }} - {% if emprunteur.blocked %} Bloqué {% else %} Actif {% endif %}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_emprunteur' %}">Ajouter un emprunteur</a>
+{% endblock %}

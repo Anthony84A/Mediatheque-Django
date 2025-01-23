@@ -1,0 +1,11 @@
+{% extends "membre/base.html" %}
+{% block content %}
+<h1>Liste des Médias Disponibles</h1>
+<ul>
+    {% for media in medias %}
+    <li>
+        {{ media.title }} ({{ media.type }}) - Créateur : {{ media.author_or_creator }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
