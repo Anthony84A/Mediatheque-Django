@@ -55,4 +55,8 @@ python manage.py runserver
 
 8. Créer des données de test:
     - Ajoutez des médias, des membres et des emprunts via l’interface de l’application bibliothecaire.
-     
+
+### CONNEXION
+
+Username : admin
+Password : 67GyCrq2RqDm
