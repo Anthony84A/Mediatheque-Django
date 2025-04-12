@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil Bibliothécaire</title>
+    <link rel="stylesheet" href="{% static 'bibliothecaire/style.css' %}">
+</head>
+<body>
+    <h1>Bienvenue sur l'espace Bibliothécaire</h1>
+    <ul>
+        <li><a href="{% url 'add_media' %}">Ajouter un Média</a></li>
+        <li><a href="{% url 'create_emprunt' %}">Créer un Emprunt</a></li>
+        <li><a href="{% url 'add_emprunteur' %}">Ajouter un Emprunteur</a></li>
+        <li><a href="{% url 'emprunteur_list' %}">Liste Emprunteur</a></li>
+        <li><a href="{% url 'media_list' %}">Liste des Media</a></li>
+    </ul>
+</body>
+</html>

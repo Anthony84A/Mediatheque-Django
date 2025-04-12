@@ -49,8 +49,9 @@ python manage.py runserver
 ```
 
    - Accéder aux applications via :
-          - Bibliothécaires : http://127.0.0.1:8000/bibliothecaire/
-          - Membres : http://127.0.0.1:8000/membre/
+          - Bibliothécaires : http://127.0.0.1:8000/bibliothecaire/ ou le bouton admin sur la page membre (besoin des identifiants plus bas pour effectuer toute les actions possible)
+          - Membres : http://127.0.0.1:8000/
+
 
 
 8. Créer des données de test:

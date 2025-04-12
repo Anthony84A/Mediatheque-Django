@@ -1,6 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Media, Emprunteur, Emprunt
 from django.http import HttpResponse
+from django.shortcuts import render
+
+
+
+
+def accueil_bibliothecaire(request):
+    return render(request, 'bibliothecaire/accueil.html')
+
 
 # Liste des médias
 def media_list(request):
